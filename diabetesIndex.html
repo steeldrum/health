@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--
+
+Collaborators Personal Health for Blood Sugar Monitor
+
+Collaborators/
+diabetesIndex.html 
+
+tjs 100928
+
+file version 1.03
+
+release version 1.04
+
+-->
+<?php
+session_start();
+?>
+
+<html lang="en">
+
+  <head>
+ <link type="text/css" href="css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+
+   <link rel="stylesheet" type="text/css" href="css/navAccordionTheme.css"/>
+  <!-- link rel="stylesheet" type="text/css" href="css/ccIndex.css" -->
+  <!-- link rel="stylesheet" type="text/css" href="js/ui/ui.core.css" -->
+
+  <link rel="stylesheet" type="text/css" href="css/diabetesIndex.css"/>
+  <!-- link rel="stylesheet" type="text/css" href="js/ui/ui.dialog.css" -->
+
+   <!-- link rel="stylesheet" type="text/css" href="js/ui/ui.resizable.css" -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Collogistics - Collaborative Management of Logistics</title>
+		<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+
+    <script type="text/javascript" src="js/ui/ui.core.js"></script>
+
+    <script type="text/javascript" src="js/ui/ui.accordion.js"></script>
+
+    <script type="text/javascript" src="js/effects.core.js"></script>
+
+    <script type="text/javascript" src="js/effects.highlight.js"></script>
+	<!-- script type="text/javascript" src="js/ui/ui.draggable.js"></script -->
+	<!-- script type="text/javascript" src="js/ui/ui.resizable.js"></script -->
+	<script type="text/javascript" src="js/ui/ui.dialog.js"></script>
+   <!-- script type="text/javascript" src="js/index.js"></script -->
+		<script type="text/javascript">
+
+
+//alert("diabetesIndex header jQuery function");
+
+	$(function() {
+      //consider license dialog
+			//define dialog config object
+
+			var licenseDialogOpts = {
+
+			title: "License",
+
+			//buttons: { "Close": function() { $(this).dialog("close"); } },
+
+			//model: true,
+
+			////overlay: { background: "url(modal.png) repeat"
+
+			//},
+
+			width: "600px",
+
+			//height: "600px",
+
+			//dialogClass: 'alert',
+
+			autoOpen: false
+
+			}
+
+	//create the dialog
+//alert("diabetesIndex creating licesne dialog...");
+		$("#licenseDialog").dialog(licenseDialogOpts);
+		
+					//define click handler for license dialog
+
+		$("#openLicenseDialog").click(function() {
+
+			//open the dialog
+            //alert("diabetesIndex openLicenseDialog click function...");
+
+			$("#licenseDialog").dialog("open");
+
+		});
+ 
+        $("#iPhoneBSMApp").click(function() {
+
+			//open page
+            window.location.href = "../BloodSugarMonitor/index.html";
+
+		});
+       
+     		/*$("#accept").click(function() {
+
+		//var elm = document.getElementById('email');
+		//if (elm) {
+//}
+//alert("diabetesIndex accept clicked...");
+} 
+
+});*/
+
+		$("#accept").click(function() {
+
+		var elm = document.getElementById('iPhoneBSMApp');
+		if (elm) {
+        elm.disabled="";
+        /*
+			var email = elm.value;
+			elm = document.getElementById('password');
+			var password = elm.value;
+			//alert("email " + email + " password " + password);
+			$.get('xml/collaborators.xml', function(data) {
+				$(data).find('collaborator').each(function() {
+					var $collaborator = $(this);
+					var collaboratorId = $collaborator.attr('id');
+					var children = $collaborator.children();
+					var last = children[0].firstChild.nodeValue;
+					var first = children[1].firstChild.nodeValue;
+					var collaboratorEmail = children[2].firstChild.nodeValue;
+					var collaboratorPassword = children[3].firstChild.nodeValue;
+					var re = / /g;
+					collaboratorEmail = collaboratorEmail.replace(re, "");
+					collaboratorPassword = collaboratorPassword.replace(re, "");
+					re = /\n/g;
+					collaboratorEmail = collaboratorEmail.replace(re, "");
+					collaboratorPassword = collaboratorPassword.replace(re, "");
+					//alert("email <" + email + "> password <" + password + "> last name " + last + " first name " + first + " collaboratorEmail <" + collaboratorEmail + "> collaboratorPassword <" + collaboratorPassword + ">");
+					if (collaboratorEmail == email && collaboratorPassword == password) {
+						loginAccountNumber = collaboratorId;
+						//alert("email " + email + " password " + password + " last name " + last + " first name " + first + " account # " + loginAccountNumber);
+						lastName = last;
+						firstName = first;
+						login(loginAccountNumber, lastName, firstName);
+						//$('#logout').disabled = "";
+						elm = document.getElementById('logout');
+						elm.disabled="";
+					}
+				}); //each
+			    }); //get
+                */
+			}
+		
+			//close the dialog
+			$("#licenseDialog").dialog("close");
+
+		    });
+		    
+});
+        
+  
+		</script>
+  </head>
+
+  <body>
+
+  <!--[if !IE]> <!-->
+
+  <object data="collogistics.svg" type="image/svg+xml"
+
+        width="400" height="100">
+
+    <embed src="collogistics.svg" type="image/svg+xml"
+
+            width="400" height="100" />
+
+</object>
+
+<!--<![endif]-->
+
+<h1>Collogistics</h1>
+
+<hr/>  Collogistics - Collaborative Management of Logistics <hr/>
+
+<div id="container">
+
+<!-- START NAV -->
+	<div id="navCol">
+
+		<ul id="navAccordion">
+
+			<li>
+
+				<a class="heading" href="#logistics" title="Logistics">Collaborative Management of Personal Health Logistics </a>
+
+				<div>
+
+					<a href="dementiaIndex.html" title="Dementia">Dementia</a>
+<a href="diabetesIndex.html" title="Diabetes">Diabetes</a>
+
+				</div>
+
+			</li>
+
+
+			<li>
+
+				<a class="heading" href="#collogistics" title="WhoWeAre">Who We Are</a>
+
+				<div>
+
+					<a href="mission.html#collogistics" title="Mission">Mission</a>
+
+					<a href="resume.html#collogistics" title="KnowledgeBase">Knowledge Base</a>
+
+					<a href="contact.html#collogistics" title="Contact">Contact</a> 
+
+				</div>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+<!-- END NAV -->
+
+	<div id="contentCol">
+
+		<h1>Collaborative Management of Logistics</h1>
+
+  <table>
+
+  <tr>
+
+  <td>
+
+<p>Diabetics are required to carefully abide by strict diet restrictions.
+This includes a diet geared for low-sugar (glucose) content.  Some logistics
+that get in the way to achieve this goal include <span class="akey">considerations for other 
+(non-diabetic) family members, meal planning, tracking paraphernalia, etc.</span>
+ </p>
+ 
+ <p> 
+This page is setup to help our Collaborator members overcome some of the
+logistical hurdles specific with regards to blood sugar level monitoring.
+ </p>
+ 
+ <p>
+ The first logistical hurdle involves getting a test kit.  An example test kit
+  is made by <a href="http://www.onetouchdiabetes.com">One Touch</a>.  
+ </p>
+ 
+  <p> 
+These test kits are fine for twice-daily glucose level tests.  Where the
+ logistical hurdle exists is in <span class="akey">properly analyzing the test data and
+  presenting it to a physician</span>.
+ </p>
+ </td><td>
+
+   <p> 
+The Collogistics site provides various aids for handling the above logistics.
+For our Collaborators' convenience we offer a <span class="akey">free iPhone App</span>
+ (from your iPhone you may view the license and download - see buttons below).  By using this App when
+you visit your physician you will have <span class="akey">more detailed statistics</span> with you provided you bring your iPhone (something you are likely to always carry).
+ </p>
+
+ <p> 
+ To use the App first establish your Settings.  Then on a twice daily basis record the glucose level (result from your test kit).  Associated with each
+ level record a proper description of your most recent food intake:
+ <ul>
+ 
+<li> abstinent - no food intake for many hours before test</li>
+<li>stringent - very controlled diabetic diet food intake</li>
+<li>observent - normal family-shared food intake, but smaller portions</li>
+<li>indulgent - celebratory food intake that ignored diabetic constraints</li>
+<li>decadent - regrettable (but delicious) food intake</li>
+
+ </ul>
+ </p>
+ 
+ <p>
+The App supports truncating old data (such as over thirty days).  In addition,
+ as a paid service, the App can provide <span class="akey">detailed PDF and/or emailed
+reports</span> that include a variety of statistics including comparisons
+ to other collaborators with similar demographics. </p>
+ 
+
+</td>
+
+  </tr>
+
+<tr><td></td><td></td></tr>
+
+<tr><td><h1>Collaborators overcome logistical hurdles...</h1></td><td><h1>as collaborative members</h1></td></tr>
+
+<tr><td><img src="images/jumpHurdle2w.jpg" /></td><td><img src="images/collaborators2w.jpg" /></td></tr>
+
+  </table>
+  <br/>
+  <br/>
+<button id="openLicenseDialog">View iPhone App License</button>&nbsp;&nbsp;&nbsp;<button id="iPhoneBSMApp" disabled="disabled">Download iPhone Glucose Tracking App</button>
+
+  <br/>
+  <br/>
+
+  <div class="iconControls">
+
+<a href="phIndex.html"><img src="images/home.gif"></a>&nbsp;&nbsp;<button id="key"><img src="images/key.gif" /></button>
+
+  </div>
+
+  </div>
+			<div id="clear"></div>
+
+		</div>
+
+
+<div id="licenseDialog">
+
+<hr/>
+<p>
+Glucose - Used for tracking glucose levels (data from blood tester).
+    Copyright (C) 2010  Collogistics
+</p>
+<p>
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+</p>
+<p>
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+</p>
+<p>
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+</p>
+<p>
+NOTE:  The software version is in beta, meaning it is being tested.
+If you find defects kindly use collogistics.com contact page to report the problem.
+</p>
+<br/>
+
+<button id="accept">Accept</button>
+</div>
+
+    <script type="text/javascript">
+
+	  //function to execute when doc ready
+
+	  $(function() {
+
+			//turn specified element into an accordion
+
+	    $("#navAccordion").accordion({
+
+				header: ".heading",
+
+				//event: "mouseover",
+
+				autoHeight: false,
+
+				alwaysOpen: false,
+
+				//active:false,
+
+				navigation: true  
+
+			});			
+
+			//for highlights of key take-away pointers
+
+		$("#key").click(function() {
+
+					//highlight specified element
+
+					//$('.akey').effect("highlight");
+
+					$('.akey').effect("highlight", {}, 20000);
+
+				});
+
+	  });
+
+	</script>
+
+  </body>
+
+</html>
+
